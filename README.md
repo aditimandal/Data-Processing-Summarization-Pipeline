@@ -1,5 +1,3 @@
----
-
 ## 📦 Data Processing & Summarization Pipeline
 
 A full-stack, multi-service project that takes a website URL, scrapes relevant content, summarizes it using a Gemini-powered LLM, and stores everything in a Postgres database via a centralized Spring Boot service.
@@ -8,7 +6,7 @@ A full-stack, multi-service project that takes a website URL, scrapes relevant c
 
 ## 🧱 Architecture Overview
 
-
+```mermaid
 graph TD;
     UI[🔵 UI: React + TypeScript]
     DS[🟢 DataService: Spring Boot (JPA + Postgres)]
@@ -23,7 +21,7 @@ graph TD;
     DS --> FL
     FL --> DS
     DS --> DB
-
+```
 
 ---
 
@@ -126,5 +124,4 @@ npm start
 | 6    | DataService      | Updates DB with summarized text        |
 
 ---
-
 
