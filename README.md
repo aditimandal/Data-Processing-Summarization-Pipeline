@@ -8,7 +8,7 @@ A full-stack, multi-service project that takes a website URL, scrapes relevant c
 
 ## 🧱 Architecture Overview
 
-```mermaid
+
 graph TD;
     UI[🔵 UI: React + TypeScript]
     DS[🟢 DataService: Spring Boot (JPA + Postgres)]
@@ -23,7 +23,7 @@ graph TD;
     DS --> FL
     FL --> DS
     DS --> DB
-```
+
 
 ---
 
@@ -127,15 +127,4 @@ npm start
 
 ---
 
-## ✅ Status Indicators
 
-| Status in DB         | Meaning                         |
-|----------------------|----------------------------------|
-| `PENDING_SCRAPE`     | Waiting for scraping             |
-| `SCRAPE_COMPLETE`    | Scraping completed successfully  |
-| `SUMMARIZED`         | Summary received                 |
-| `ERROR_*`            | Process error                    |
-
----
-
-Want to include deployment instructions next (like Dockerizing the whole stack or setting up CI/CD)? I can help draft those too. Let’s build this into something that’s not just functional—but polished and impressive.
