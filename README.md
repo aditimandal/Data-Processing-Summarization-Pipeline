@@ -1,6 +1,3 @@
-# Data-Processing-Summarization-Pipeline
-Absolutely, Aditi! Let’s start by creating a clean and informative **README.md** file that you can place at the root of your project. It will clearly document your architecture, setup steps, and usage.
-
 ---
 
 ## 📦 Data Processing & Summarization Pipeline
