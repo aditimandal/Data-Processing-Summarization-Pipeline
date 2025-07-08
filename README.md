@@ -6,12 +6,13 @@ A full-stack, multi-service project that takes a website URL, scrapes relevant c
 
 ## 🧱 Architecture Overview
 
+
 ```mermaid
 graph TD;
     UI[🔵 UI: React + TypeScript]
-    DS[🟢 DataService: Spring Boot (JPA + Postgres)]
-    FS[🟣 FastAPI Scraper Service]
-    FL[🔴 Flask Summarizer Service (Gemini LLM)]
+    DS["🟢 DataService: Spring Boot - JPA & Postgres"]
+    FS["🟣 FastAPI Scraper Service"]
+    FL["🔴 Flask Summarizer Service (Gemini LLM)"]
     DB[(🗄️ PostgreSQL DB)]
 
     UI --> DS
@@ -125,3 +126,42 @@ npm start
 
 ---
 
+Great! Let’s update the **README.md** file to clearly document how the **Groq API key** is used and where it should be placed. This improves setup clarity and helps developers avoid exposing sensitive keys during pushes.
+
+Here’s the updated section to add to the README under **Setup & Usage** and **Environment Configuration**:
+
+---
+
+## 🔐 Environment Configuration
+
+To enable summarization using the **Groq Gemini API**, you must insert your API key into a `.env` file used by the **Flask Summarizer Service**.
+
+### 📁 `.env` setup for Flask Summarizer
+Create the file at the root of the `flask-summarizer-service` folder:
+
+```bash
+touch flask-summarizer-service/.env
+```
+
+Add the following line (replace with your actual key):
+
+```env
+GROQ_API_KEY=your-groq-api-key-here
+```
+
+> 🛑 **Important:** Make sure `.env` is listed in `.gitignore` so that your secrets don’t get pushed to GitHub.
+
+### 🧪 Load `.env` in Flask App
+Inside your Flask app code, use `python-dotenv` to load the key:
+
+```python
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+api_key = os.getenv("GROQ_API_KEY")
+```
+
+---
+
+Want me to generate the full README file for copy-pasting, or help you define `.gitignore` rules for all services to keep secrets safe? Just say the word.
