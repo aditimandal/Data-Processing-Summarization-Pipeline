@@ -164,4 +164,3 @@ api_key = os.getenv("GROQ_API_KEY")
 
 ---
 
-Want me to generate the full README file for copy-pasting, or help you define `.gitignore` rules for all services to keep secrets safe? Just say the word.
